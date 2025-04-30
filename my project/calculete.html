@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculetor</title>
+    <style>
+      input{
+        text-shadow: -2px 2px 2px black;
+        transition-duration:2s,1s;
+      }
+      input:hover{
+        background-color: rgb(158, 96, 21);
+        transition-duration:2s,1s;
+      }
+      select:hover{
+        background-color: rgb(158, 96, 21);
+        transition-duration:2s,1s;
+      }
+      button:hover{
+        background-color: rgb(158, 96, 21);
+        transition-duration:2s,1s;
+      }
+      header{
+        text-shadow: -2px 2px 2px blue;
+        transition-duration:3s,1s;
+        color: rgb(19, 80, 2);
+      }
+      fieldset{
+        backdrop-filter: invert(40%);
+      }
+      fieldset:hover{
+        transition-duration: 3s,1s ;
+        background-color: rgb(4, 14, 74);
+        box-shadow: 5px 5px 6px ;
+      }
+    </style>
+</head>
+<body bgcolor="teal">
+  <fieldset  style=" border:5px solid rgb(7, 45, 1);
+  margin-left: 190px; margin-right: 190px;">
+
+  <header style="text-align: center;"> <h1># calculetor #</h1></header>
+
+   <center style="padding-top: 100px;">
+     <input type="number" name="number" id="first" step="any">
+     <select name="opertor" id="ope">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+     </select>
+     <input type="number" name="number" id="second" step="any">
+    </center>
+    <br>
+    <center style="padding-bottom: 80px;">
+    <button onclick="bhagchand()" >
+        <b>=</b>
+    </button>
+    <input type="text" id="res" name="number" readonly="">
+    </center>
+  </fieldset>
+</body>
+<script>
+    function bhagchand() {
+        var ope1=document.getElementById('first').value;
+        var ope2=document.getElementById('second').value;
+        var ope=document.getElementById('ope').value;
+
+            if (ope=='+') {
+              var res=parseInt(ope1)+parseInt(ope2);  
+            }
+            if (ope=='-') {
+              var res=parseInt(ope1)-(ope2);  
+            }
+            if (ope=='*') {
+              var res=parseInt(ope1)*(ope2);  
+            }
+            if (ope=='/') {
+              var res=parseInt(ope1)/(ope2);  
+            }
+            document.getElementById('res').value=res;
+    }
+</script>
+</html>
